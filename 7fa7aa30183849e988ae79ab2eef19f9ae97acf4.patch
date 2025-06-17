@@ -1,0 +1,22 @@
+From 7fa7aa30183849e988ae79ab2eef19f9ae97acf4 Mon Sep 17 00:00:00 2001
+From: Ben Beasley <code@musicinmybrain.net>
+Date: Thu, 16 Jan 2025 15:41:07 -0500
+Subject: [PATCH] Include <cstdint> for uint32_t/int32_t (#120)
+
+Fixes failure to compile on GCC 15.
+---
+ include/mapbox/earcut.hpp | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/include/mapbox/earcut.hpp b/include/mapbox/earcut.hpp
+index b98508f..fd33814 100644
+--- a/include/mapbox/earcut.hpp
++++ b/include/mapbox/earcut.hpp
+@@ -4,6 +4,7 @@
+ #include <cassert>
+ #include <cmath>
+ #include <cstddef>
++#include <cstdint>
+ #include <limits>
+ #include <memory>
+ #include <utility>

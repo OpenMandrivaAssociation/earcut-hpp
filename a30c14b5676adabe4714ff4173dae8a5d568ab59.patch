@@ -1,0 +1,25 @@
+From a30c14b5676adabe4714ff4173dae8a5d568ab59 Mon Sep 17 00:00:00 2001
+From: Ilya Dzenzelyuk <43926347+dzen03@users.noreply.github.com>
+Date: Sun, 21 Jan 2024 16:21:00 +0300
+Subject: [PATCH] Fix unused but set variable
+
+---
+ include/mapbox/earcut.hpp | 3 ---
+ 1 file changed, 3 deletions(-)
+
+diff --git a/include/mapbox/earcut.hpp b/include/mapbox/earcut.hpp
+index a73ae87..b98508f 100644
+--- a/include/mapbox/earcut.hpp
++++ b/include/mapbox/earcut.hpp
+@@ -263,11 +263,8 @@ void Earcut<N>::earcutLinked(Node* ear, int pass) {
+     Node* prev;
+     Node* next;
+ 
+-    int iterations = 0;
+-
+     // iterate through ears, slicing them one by one
+     while (ear->prev != ear->next) {
+-        iterations++;
+         prev = ear->prev;
+         next = ear->next;
+ 
